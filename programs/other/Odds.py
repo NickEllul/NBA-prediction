@@ -112,10 +112,10 @@ def addOdds(y, odds, matches):
     return matches
     
 for y in range(2009, 2023):
-    odds = pd.read_csv('C:\\Users\\Nicho\\Documents\\Programming\\BasketballPrediction\\V1\\Data\\Odds\\' + str(y) + '.csv')    
-    matches = pd.read_csv('C:\\Users\\Nicho\\Documents\\Programming\\BasketballPrediction\\V1\\Data\\Seasons\\'+str(y)+'_season.csv')
+    odds = pd.read_csv('C:\\AddYourFilePathHere' + str(y) + '.csv')    
+    matches = pd.read_csv('C:\\AddYourFilePathHere'+str(y)+'_season.csv')
     matches  = addOdds(y, odds, matches)
     
     print('NaN values:',  matches['TeamsOdds'].isna().sum())
-    matches.to_csv('C:\\Users\\Nicho\\Documents\\Programming\\BasketballPrediction\\V1\\Data\\CleanedOdds\\' + str(y) + '_season_with_odds.csv', index=False)
+    matches.to_csv('C:\\AddYourFilePathHere' + str(y) + '_season_with_odds.csv', index=False)
     print(str(y) + ' Complete Adding Odds')
